@@ -1,5 +1,6 @@
 import pytest
 import os
+import glob
 import urllib.request
 from subprocess import check_output
 
@@ -30,12 +31,11 @@ def test_div():
     result = run_shell_test(script_path, 'sub', 2, 2)
     assert result == 1
     
-def test_connect(host='http://google.com'):
-
-    try:
-        test = urllib.request.urlopen(host)
-
-    except:
-        work = False
-    assert test == True
+def test_connect():
+    url = 'https://raw.githubusercontent.com/files-community/Files/main/LICENSE'
+    r = requests.get(url, allow_redirects=True)
+    open('checkup-linux', 'wb').write(r.content)
+    
+    r.content == 1
+    
 
