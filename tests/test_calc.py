@@ -32,7 +32,7 @@ def test_div():
     assert result == 1
     
 def test_connect():
-    url = 'https://raw.githubusercontent.com/files-community/Files/main/LICENSE'
+    url = 'https://filesamples.com/samples/document/txt/sample3.txt'
     r = requests.get(url, allow_redirects=True)
     open('checkup-linux', 'wb').write(r.content)
     
