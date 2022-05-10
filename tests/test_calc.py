@@ -38,4 +38,4 @@ def test_ping():
     else:
         pingstatus = "Network Error"
     
-    asset response == 0
+    assert response == 0
