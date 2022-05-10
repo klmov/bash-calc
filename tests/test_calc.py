@@ -1,4 +1,5 @@
 import pytest
+import os
 from subprocess import check_output
 
 script_path = "tests/test.sh"
@@ -27,3 +28,14 @@ def test_sub():
 def test_div():
     result = run_shell_test(script_path, 'sub', 2, 2)
     assert result == 1
+
+def test_ping():
+    hostname = "google.com"
+    response = os.system("ping -c 1 " + hostname)
+    # and then check the response...
+    if response == 0:
+        pingstatus = "Network Active"
+    else:
+        pingstatus = "Network Error"
+    
+    asset response == 0
