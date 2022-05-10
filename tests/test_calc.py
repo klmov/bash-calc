@@ -1,7 +1,7 @@
 import pytest
 import os
-import glob, requests
-import urllib.request
+import glob
+import requests
 from subprocess import check_output
 
 script_path = "tests/test.sh"
@@ -36,6 +36,6 @@ def test_connect():
     r = requests.get(url, allow_redirects=True)
     open('checkup-linux', 'wb').write(r.content)
     
-    r.content == 1
+    assert r.content == 1
     
 
