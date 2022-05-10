@@ -1,6 +1,6 @@
 import pytest
 import os
-import glob
+import glob, requests
 import urllib.request
 from subprocess import check_output
 
