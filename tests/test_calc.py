@@ -31,11 +31,11 @@ def test_div():
     assert result == 1
     
 def test_connect(host='http://google.com'):
-    work = True
+
     try:
-        urllib.request.urlopen(host)
-        work = True
+        test = urllib.request.urlopen(host)
+
     except:
         work = False
-    assert work == True
+    assert test == True
 
